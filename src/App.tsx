@@ -35,6 +35,7 @@ function App() {
         </StytchProvider>
 
       </HashRouter>
+
     </div>
   )
 };
