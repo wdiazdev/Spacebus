@@ -6,6 +6,7 @@ import SignUp from "./pages/SignUp"
 import { StytchHeadlessClient } from "@stytch/vanilla-js/headless"
 import { StytchProvider } from "@stytch/react";
 import { useCallback } from "react";
+import HomeVideo from './assets/homevideo.mp4';
 
 function App() {
 
@@ -19,6 +20,10 @@ function App() {
 
   return (
     <div className="App">
+      <div className='overlay'></div>
+      <video autoPlay loop muted className='video'>
+        <source src={HomeVideo} type='video/mp4' />
+      </video>
 
       <HashRouter>
 
