@@ -26,5 +26,5 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    background-color: rgba(63, 73, 223, 0.3);
+    background-color: rgba(63, 73, 223, 0.1);
 }
