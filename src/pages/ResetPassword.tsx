@@ -6,11 +6,11 @@ export default function ResetPassword() {
 
     const stytchClient = useStytch();
 
-    const token = new URLSearchParams(window.location.search).get("token");
+    const token: any = new URLSearchParams(window.location.search).get("token");
 
-    const resetPassword = useCallback((token: any) => {
+    const resetPassword = useCallback(() => {
         stytchClient.passwords.resetByEmail({
-            token,
+            token: token,
             password: newPassword,
             session_duration_minutes: 60,
         });
