@@ -45,4 +45,4 @@ export default function SignUp() {
             <button onClick={signUp}>Sign Up</button>
         </div>
     )
-}
+};
