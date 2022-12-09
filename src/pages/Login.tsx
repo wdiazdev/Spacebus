@@ -1,5 +1,9 @@
 import { useState, useCallback } from "react";
 import { useStytch } from "@stytch/react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+
 
 export default function Login() {
 
@@ -22,27 +26,53 @@ export default function Login() {
         });
     }, [stytchClient]);
 
+    // const logout = useCallback(() => {
+    //     stytchClient.session.revoke();
+    // }, [stytchClient]);
+
     return (
-        <>
-            <input
-                placeholder='Email...'
-                onChange={(e) => {
-                    setEmail(e.target.value)
-                }}
-            />
-            <input
-                placeholder='Password...'
-                onChange={(e) => {
-                    setPassword(e.target.value)
-                }}
-            />
+        <div className="home--page">
 
-            <button onClick={login}>Login</button>
-
-            <div>
-                <p>Forgot your password?</p>
-                <button onClick={resetPasswordByEmail}>Reset Password</button>
+            <div className="home--content">
+                <h1>Welcome to the space<span>bus</span></h1>
+                <p>Solar system exploration</p>
             </div>
-        </>
+
+            <div className="login">
+                <h3>Login</h3>
+
+                <input
+                    placeholder='Email...'
+                    onChange={(e) => {
+                        setEmail(e.target.value)
+                    }}
+                />
+
+                <input
+                    placeholder='Password...'
+                    type="password"
+                    onChange={(e) => {
+                        setPassword(e.target.value)
+                    }}
+                    id="password"
+                />
+
+                <Link to="/resetpassword" className="forgot--pass">Forgot password?</Link>
+
+                <button onClick={login} className="btn">Login</button>
+
+                <p>Not a member?<Link to="/signup" className="signup--link"> Sign up</Link></p>
+
+                <div className="login--icons">
+                    <FontAwesomeIcon icon={faFacebook} />
+                    <FontAwesomeIcon icon={faTwitter} />
+                    <FontAwesomeIcon icon={faYoutube} />
+                </div>
+
+                {/* <button onClick={resetPasswordByEmail} className="btn">Reset Password</button> */}
+
+                {/* <button onClick={logout}>Logout</button> */}
+            </div>
+        </div>
     )
 };
