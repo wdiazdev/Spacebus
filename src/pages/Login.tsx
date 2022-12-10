@@ -35,7 +35,7 @@ export default function Login() {
         <div className="home--page">
 
             <div className="home--content">
-                <h1>Welcome to the space<span>bus</span></h1>
+                <h1 className="text-focus-in ">Welcome to the space<span>bus</span></h1>
                 <p>Solar system exploration</p>
                 <img src={astronaut} alt="astronaut" className="astronaut" />
             </div>
