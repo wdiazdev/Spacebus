@@ -3,8 +3,11 @@ import { useState } from "react";
 import { useStytch } from "@stytch/react";
 import { Link } from "react-router-dom";
 import rocket from "../assets/rocket.gif";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
+
+    let navigate = useNavigate();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -34,6 +37,7 @@ export default function SignUp() {
             <div className="form--container">
 
                 <form className="form">
+
                     <h3 className="text-focus-in">Ready to launch</h3>
                     <p>Create a free account</p>
 
@@ -60,11 +64,23 @@ export default function SignUp() {
                         />
                     </div>
 
-                    <button onClick={signUp} className="btn">Sign Up</button>
+                    <button
+                        onClick={() => {
+                            navigate("/");
+                            signUp();
+                        }}
+                        className="btn"
+                    >
+                        Sign Up
+                    </button>
 
                     <p><Link to="/" className="signup--link">Login</Link></p>
+
                 </form>
+
             </div>
+
         </div>
+
     )
 };

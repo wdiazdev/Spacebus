@@ -6,6 +6,7 @@ import { StytchHeadlessClient } from "@stytch/vanilla-js/headless"
 import { StytchProvider } from "@stytch/react";
 import Home from "./pages/Home";
 import ErrorPage from "./pages/ErrorPage";
+import ForgotPass from "./pages/forgotPass";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/forgotpassword" element={<ForgotPass />} />
           <Route path="/resetpassword/*" element={<ResetPassword />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>

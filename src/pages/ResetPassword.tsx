@@ -1,8 +1,13 @@
+import "../styles/resetPass.css";
 import { useCallback, useState } from "react";
 import { useStytch } from "@stytch/react";
+import { useNavigate } from "react-router-dom";
 
 export default function ResetPassword() {
+
     const [newPassword, setNewPassword] = useState("");
+
+    let navigate = useNavigate();
 
     const stytchClient = useStytch();
 
@@ -17,15 +22,33 @@ export default function ResetPassword() {
     }, [stytchClient, token, newPassword]);
 
     return (
-        <div>
-            <input
-                placeholder='New Password'
-                onChange={(e) => {
-                    setNewPassword(e.target.value)
-                }}
-            />
+        <div className="reset--password">
 
-            <button onClick={resetPassword}>Reset Password</button>
+
+            <form className="form">
+
+                <div className="new--password">
+                    <p>New password:</p>
+                    <input
+                        type="password"
+                        placeholder='New Password'
+                        onChange={(e) => {
+                            setNewPassword(e.target.value)
+                        }}
+                    />
+                </div>
+
+                <button
+                    onClick={() => {
+                        navigate("/");
+                        resetPassword();
+                    }}
+                    className="btn"
+                >
+                    Reset Password
+                </button>
+
+            </form>
         </div>
     )
 }

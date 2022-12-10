@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { useStytch } from "@stytch/react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,6 +9,7 @@ import astronaut from "../assets/homeastronaut.gif";
 export default function Login() {
 
     const [email, setEmail] = useState("");
+
     const [password, setPassword] = useState("");
 
     const stytchClient = useStytch();
@@ -21,26 +22,19 @@ export default function Login() {
         });
     };
 
-    const resetPasswordByEmail = useCallback(() => {
-        stytchClient.passwords.resetByEmailStart({
-            email: "wdiazdev@gmail.com",
-        });
-    }, [stytchClient]);
-
-    // const logout = useCallback(() => {
-    //     stytchClient.session.revoke();
-    // }, [stytchClient]);
-
     return (
         <div className="home--page">
 
             <div className="home--content">
-                <h1 className="text-focus-in ">Welcome to the space<span>bus</span></h1>
+
+                <h1 className="text-focus-in">Welcome to the space<span>bus</span></h1>
                 <p>Solar system exploration</p>
-                <img src={astronaut} alt="astronaut" className="astronaut" />
+                <img src={astronaut} alt="astronaut" className="astronaut text-focus-in" />
+
             </div>
 
             <div className="login">
+
                 <h3 className="header">Login</h3>
 
                 <input
@@ -60,10 +54,9 @@ export default function Login() {
                     id="password"
                 />
 
-                <Link to="/resetpassword" className="forgot--pass">Forgot password?</Link>
+                <Link to="/forgotpassword" className="forgot--pass">Forgot password?</Link>
 
                 <button onClick={login} className="btn">Login</button>
-
                 <div className="login--icons">
                     <FontAwesomeIcon icon={faFacebook} className="icon" />
                     <FontAwesomeIcon icon={faTwitter} className="icon" />
@@ -72,10 +65,15 @@ export default function Login() {
 
                 <p>Not a member?<Link to="/signup" className="signup--link"> Sign up</Link></p>
 
-                {/* <button onClick={resetPasswordByEmail} className="btn">Reset Password</button> */}
-
-                {/* <button onClick={logout}>Logout</button> */}
             </div>
+
         </div>
     )
 };
+
+
+// const logout = useCallback(() => {
+//     stytchClient.session.revoke();
+// }, [stytchClient]);
+
+// <button onClick={logout}>Logout</button>
