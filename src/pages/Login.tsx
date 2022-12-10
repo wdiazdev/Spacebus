@@ -63,13 +63,13 @@ export default function Login() {
 
                 <button onClick={login} className="btn">Login</button>
 
-                <p>Not a member?<Link to="/signup" className="signup--link"> Sign up</Link></p>
-
                 <div className="login--icons">
-                    <FontAwesomeIcon icon={faFacebook} />
-                    <FontAwesomeIcon icon={faTwitter} />
-                    <FontAwesomeIcon icon={faYoutube} />
+                    <FontAwesomeIcon icon={faFacebook} className="icon" />
+                    <FontAwesomeIcon icon={faTwitter} className="icon" />
+                    <FontAwesomeIcon icon={faYoutube} className="icon" />
                 </div>
+
+                <p>Not a member?<Link to="/signup" className="signup--link"> Sign up</Link></p>
 
                 {/* <button onClick={resetPasswordByEmail} className="btn">Reset Password</button> */}
 
