@@ -3,7 +3,7 @@ import { useStytch } from "@stytch/react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
-
+import { homeAstronaut } from "../assets/homeAstronaut.png";
 
 export default function Login() {
 
@@ -36,6 +36,7 @@ export default function Login() {
             <div className="home--content">
                 <h1>Welcome to the space<span>bus</span></h1>
                 <p>Solar system exploration</p>
+                <img src={homeAstronaut} alt="astronaut" className="astronaut" />
             </div>
 
             <div className="login">
