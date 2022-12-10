@@ -1,6 +1,8 @@
+import "../styles/signup.css";
 import { useState } from "react";
 import { useStytch } from "@stytch/react";
-
+import { Link } from "react-router-dom";
+import rocket from "../assets/rocket.gif";
 
 export default function SignUp() {
 
@@ -27,22 +29,42 @@ export default function SignUp() {
     };
 
     return (
-        <div>
-            <input
-                onChange={(e) => {
-                    setEmail(e.target.value)
-                }}
-                placeholder='Email...'
-            />
+        <div className="signup--page">
+            <img src={rocket} alt="astronaut" className="signup--rocket" />
+            <div className="form--container">
 
-            <input
-                onChange={(e) => {
-                    setPassword(e.target.value)
-                }}
-                placeholder='Password...'
-            />
+                <form className="form">
+                    <h3 className="text-focus-in">Ready to launch</h3>
+                    <p>Create a free account</p>
 
-            <button onClick={signUp}>Sign Up</button>
+                    <div className="email">
+                        <p>Email:</p>
+                        <input
+                            type="email"
+                            placeholder='Email...'
+                            name="email"
+                            onChange={(e) => {
+                                setEmail(e.target.value)
+                            }}
+                        />
+                    </div>
+
+                    <div className="email">
+                        <p className="labels">Password:</p>
+                        <input
+                            type="password"
+                            placeholder='Password...'
+                            onChange={(e) => {
+                                setPassword(e.target.value)
+                            }}
+                        />
+                    </div>
+
+                    <button onClick={signUp} className="btn">Sign Up</button>
+
+                    <p><Link to="/" className="signup--link">Login</Link></p>
+                </form>
+            </div>
         </div>
     )
 };

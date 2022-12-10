@@ -1,11 +1,12 @@
 import "./App.css";
-import { HashRouter, Routes, Route, Link } from "react-router-dom"
-import Login from "./pages/Login"
+import { HashRouter, Routes, Route } from "react-router-dom"
 import ResetPassword from "./pages/ResetPassword"
 import SignUp from "./pages/SignUp"
 import { StytchHeadlessClient } from "@stytch/vanilla-js/headless"
 import { StytchProvider } from "@stytch/react";
-import HomeVideo from './assets/homevideo.mp4';
+import Home from "./pages/Home";
+import ErrorPage from "./pages/ErrorPage";
+
 
 function App() {
 
@@ -14,22 +15,16 @@ function App() {
   );
 
   return (
-    <div className="App">
-      <div className='overlay'></div>
-      <video autoPlay loop muted className='video'>
-        <source src={HomeVideo} type='video/mp4' />
-      </video>
-      <HashRouter>
-        <StytchProvider stytch={stytchClient}>
-          <Login />
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/resetpassword/*" element={<ResetPassword />} />
-          </Routes>
-        </StytchProvider>
-      </HashRouter>
-    </div>
+    <HashRouter>
+      <StytchProvider stytch={stytchClient}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/resetpassword/*" element={<ResetPassword />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </StytchProvider>
+    </HashRouter>
   )
 };
 
