@@ -1,4 +1,5 @@
 import '../styles/LoginStyles.css';
+import Rocket from '../assets/rocket.gif';
 
 export default function Login({ login }: any) {
 
@@ -12,12 +13,13 @@ export default function Login({ login }: any) {
 
     return (
         <div className='login--container'>
-
+            <img src={Rocket} alt='Rocket' className='rocket' />
             <form onSubmit={handleSubmit} className='form'>
 
-                <label htmlFor="email">Email:</label>
-                <input type="email" name="email" placeholder="e.g. test@test.com" id="email" />
-                <input type="submit" value="login" className='btn' />
+                <h3>Ready to Launch?</h3>
+                <label htmlFor='email'>Email:</label>
+                <input type='email' name='email' placeholder='e.g. test@test.com' id='email' />
+                <input type='submit' value='login' className='btn' />
 
             </form>
         </div>

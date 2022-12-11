@@ -1,7 +1,7 @@
-
+import '../styles/AccountStyles.css';
 
 export default function Account() {
     return (
-        <div>Account</div>
+        <div className='account--container'>Account</div>
     )
 }

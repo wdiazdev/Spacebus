@@ -4,23 +4,44 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 4rem;
+    padding: 1rem 3rem;
     z-index: 1000;
 }
 
 .logo {
-    width: 3.5rem;
+    width: 100px;
     margin: 0 auto;
 }
 
 .navlinks {
-    width: 50%;
+    width: 30%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1rem;
+    text-transform: uppercase;
 }
 
-/* 
-.navbar--bg {
-    background: rgba(0, 0, 0, .8);
-    transition: 0.5s;
-} */
+.navlinks a.active {
+    color: #00FFFF;
+    font-size: 1.2rem;
+}
+
+.text-focus-in {
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@keyframes text-focus-in {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}

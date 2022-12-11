@@ -1,6 +1,7 @@
 import HomeVideo from '../assets/homevideo.mp4';
-import '../styles/homePage.css';
+import '../styles/HomeStyles.css';
 import astronaut from '../assets/homeastronaut.gif';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
     return (
@@ -16,6 +17,7 @@ export default function Home() {
 
                 <h1 className='text-focus-in'>Welcome to the Space<span>Bus</span></h1>
                 <p>Solar System <span>Exploration</span></p>
+                <Link to='/login'><button className='btn login--btn'>Login</button></Link>
                 <img src={astronaut} alt='astronaut' className='astronaut text-focus-in' />
 
             </div>

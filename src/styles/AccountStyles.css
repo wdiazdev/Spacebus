@@ -1,0 +1,13 @@
+.account--container {
+    position: relative;
+    height: 100vh;
+    background: url('../assets/signupbg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

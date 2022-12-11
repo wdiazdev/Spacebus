@@ -1,5 +1,5 @@
 import '../styles/NavbarStyles.css';
-import Icon from '../assets/rocketicon.png';
+import Astronot from '../assets/astronot.gif';
 import { NavLink } from 'react-router-dom';
 import { useStytchSession } from '@stytch/stytch-react';
 
@@ -10,13 +10,12 @@ export default function Navigation({ logout }: any) {
     return (
         <nav className='navbar--container'>
             <div>
-                <img src={Icon} alt='Logo' className='logo' />
+                <img src={Astronot} alt='Logo' className='logo' />
             </div>
-            <div className='navlinks'>
-                <NavLink to="/">Home</NavLink>
-                {!session && <NavLink to='/login'>Login</NavLink>}
+            <div className='navlinks text-focus-in '>
+                {!session && <NavLink to="/">Home</NavLink>}
                 {session && <NavLink to='/account'>Account</NavLink>}
-                {session && <button onClick={logout}>Logout</button>}
+                {session && <button onClick={logout} className='btn'>Logout</button>}
             </div>
         </nav>
     )

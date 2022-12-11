@@ -17,7 +17,7 @@ function App() {
 
   const login = async (email: string) => {
     await client.magicLinks.email.loginOrCreate(email)
-    alert(`An email has been sent to ${email}`)
+    alert(`An email has been sent to ${email}. Please authenticate your account!`)
   }
 
   const logout = useCallback(async () => {
