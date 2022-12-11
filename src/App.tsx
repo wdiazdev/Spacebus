@@ -1,42 +1,46 @@
-import "./App.css";
-import { HashRouter, Routes, Route } from "react-router-dom"
-import ResetPassword from "./pages/ResetPassword"
-import SignUp from "./pages/SignUp"
-import { StytchHeadlessClient } from "@stytch/vanilla-js/headless"
-import { StytchProvider } from "@stytch/react";
-import Home from "./pages/Home";
-import ForgotPass from "./pages/ForgotPass";
-
+import './App.css';
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import Home from './pages/Home';
+import Navigation from './components/Navigation';
+import Login from './pages/Login';
+import Account from './pages/Account';
+import Authenticate from './pages/Authenticate';
+import UserAccount from './components/UserAccount';
+import { useStytch } from '@stytch/stytch-react';
+import { useCallback } from 'react';
 
 function App() {
 
-  const stytchClient = new StytchHeadlessClient(
-    "public-token-test-f5486417-a4f0-48f3-b369-3f8a35995913"
-  );
+  const client = useStytch();
+
+  const navigate = useNavigate();
+
+  const login = async (email: string) => {
+    await client.magicLinks.email.loginOrCreate(email)
+    alert(`An email has been sent to ${email}`)
+  }
+
+  const logout = useCallback(async () => {
+    await client.session.revoke()
+    alert(`You have successfully logged out`)
+  }, [client])
 
   return (
-    <HashRouter>
-      <StytchProvider stytch={stytchClient}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/forgotpassword" element={<ForgotPass />} />
-          <Route path="/resetpassword/*" element={<ResetPassword />} />
-          <Route
-            path="*"
-            element={
-              <p className="error--404">
-                404! Page not found!
-              </p>}
-          />
-        </Routes>
-      </StytchProvider>
-    </HashRouter>
+    <>
+      <Navigation logout={logout} />
+      <Routes>
+        <Route index path='/' element={<Home />} />
+        <Route path='/login' element={<Login login={login} />} />
+        <Route path='/account' element={
+          <UserAccount>
+            <Account />
+          </UserAccount>
+        } />
+        <Route path='/authenticate' element={<Authenticate />} />
+        <Route path='*' element={<p className='error'>404! Page not found!</p>} />
+      </Routes>
+    </>
   )
 };
 
 export default App
-
-
-{/* <Link to="/signup">SignUp</Link>
-        <Link to="/login">Login</Link> */}

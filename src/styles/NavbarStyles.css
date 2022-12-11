@@ -1,0 +1,26 @@
+.navbar--container {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    z-index: 1000;
+}
+
+.logo {
+    width: 3.5rem;
+    margin: 0 auto;
+}
+
+.navlinks {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 
+.navbar--bg {
+    background: rgba(0, 0, 0, .8);
+    transition: 0.5s;
+} */

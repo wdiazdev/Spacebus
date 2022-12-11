@@ -9,18 +9,21 @@
 
 .video {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
     z-index: -10000;
 }
 
 .overlay {
     position: absolute;
+    top: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: -10;
     background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -29,6 +32,8 @@
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
 }
 
 .home--content h1 {
@@ -64,6 +69,7 @@
 
 .astronaut {
     position: absolute;
+    top: 25px;
     left: 320px;
     width: 450px;
 }
