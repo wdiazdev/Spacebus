@@ -33,52 +33,50 @@ export default function SignUp() {
 
     return (
         <div className="signup--page">
+
             <img src={rocket} alt="astronaut" className="signup--rocket" />
-            <div className="form--container">
 
-                <form className="form">
+            <form className="form--container">
 
-                    <h3 className="text-focus-in">Ready to launch</h3>
-                    <p>Create a free account</p>
+                <h3 className="header text-focus-in">Ready to launch</h3>
+                <p>Create a free account</p>
 
-                    <div className="email">
-                        <p>Email:</p>
-                        <input
-                            type="email"
-                            placeholder='Email...'
-                            name="email"
-                            onChange={(e) => {
-                                setEmail(e.target.value)
-                            }}
-                        />
-                    </div>
-
-                    <div className="email">
-                        <p className="labels">Password:</p>
-                        <input
-                            type="password"
-                            placeholder='Password...'
-                            onChange={(e) => {
-                                setPassword(e.target.value)
-                            }}
-                        />
-                    </div>
-
-                    <button
-                        onClick={() => {
-                            navigate("/");
-                            signUp();
+                <div className="login--email">
+                    <p>Email:</p>
+                    <input
+                        type="email"
+                        placeholder='Email...'
+                        name="email"
+                        onChange={(e) => {
+                            setEmail(e.target.value)
                         }}
-                        className="btn"
-                    >
-                        Sign Up
-                    </button>
+                    />
+                </div>
 
-                    <p><Link to="/" className="signup--link">Login</Link></p>
+                <div className="login--email">
+                    <p className="labels">Password:</p>
+                    <input
+                        type="password"
+                        placeholder='Password...'
+                        onChange={(e) => {
+                            setPassword(e.target.value)
+                        }}
+                    />
+                </div>
 
-                </form>
+                <button
+                    onClick={() => {
+                        navigate("/");
+                        signUp();
+                    }}
+                    className="btn"
+                >
+                    Sign Up
+                </button>
 
-            </div>
+                <p><Link to="/" className="signup--link">Login</Link></p>
+
+            </form>
 
         </div>
 

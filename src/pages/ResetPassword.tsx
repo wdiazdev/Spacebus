@@ -25,9 +25,9 @@ export default function ResetPassword() {
         <div className="reset--password">
 
 
-            <form className="form">
+            <form className="reset--form">
 
-                <div className="new--password">
+                <div className="login--email">
                     <p>New password:</p>
                     <input
                         type="password"
@@ -51,4 +51,4 @@ export default function ResetPassword() {
             </form>
         </div>
     )
-}
+};

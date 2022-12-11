@@ -20,11 +20,11 @@ export default function ForgotPass() {
     return (
         <div className="forgot--password">
 
-            <div className="form">
+            <form className="form">
 
                 <h3 className="header">Forgot your password?</h3>
 
-                <div className="email">
+                <div className="login--email">
                     <p>Your email:</p>
                     <input
                         type="email"
@@ -44,7 +44,7 @@ export default function ForgotPass() {
                     Reset
                 </button>
 
-            </div>
+            </form>
         </div>
 
     )

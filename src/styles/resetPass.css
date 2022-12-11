@@ -10,15 +10,15 @@
     align-items: center;
 }
 
-.form {
+.reset--form {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    width: 325px;
-    height: 300px;
+    width: 500px;
+    height: 250px;
     border: 1px solid #fff;
     border-radius: 40px;
     background-color: rgba(0, 0, 0, 0.3);
@@ -26,19 +26,4 @@
     -webkit-box-shadow: 0px 0px 18px 0px rgba(46, 213, 255, 0.9);
     -moz-box-shadow: 0px 0px 18px 0px rgba(46, 213, 255, 0.9);
     box-shadow: 0px 0px 18px 0px rgba(46, 213, 255, 0.9);
-}
-
-.new--password {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 80%;
-    gap: 0.5rem;
-}
-
-.new--password>input {
-    width: 100%;
-    padding: 0.5rem;
-    color: #000;
-    outline: none;
 }

@@ -17,6 +17,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@stytch/react": "^0.5.0",
     "@stytch/vanilla-js": "^0.5.1",
+    "@types/node": "^18.11.13",
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

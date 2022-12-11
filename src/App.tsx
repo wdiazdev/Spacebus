@@ -5,8 +5,7 @@ import SignUp from "./pages/SignUp"
 import { StytchHeadlessClient } from "@stytch/vanilla-js/headless"
 import { StytchProvider } from "@stytch/react";
 import Home from "./pages/Home";
-import ErrorPage from "./pages/ErrorPage";
-import ForgotPass from "./pages/forgotPass";
+import ForgotPass from "./pages/ForgotPass";
 
 
 function App() {
@@ -23,7 +22,13 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/forgotpassword" element={<ForgotPass />} />
           <Route path="/resetpassword/*" element={<ResetPassword />} />
-          <Route path="*" element={<ErrorPage />} />
+          <Route
+            path="*"
+            element={
+              <p className="error--404">
+                404! Page not found!
+              </p>}
+          />
         </Routes>
       </StytchProvider>
     </HashRouter>
