@@ -12,9 +12,14 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mui/icons-material": "^5.10.16",
+    "@mui/material": "^5.10.17",
     "@stytch/stytch-react": "^4.1.1",
     "@stytch/vanilla-js": "^0.5.1",
     "@types/node": "^18.11.13",

@@ -1,7 +1,7 @@
 import './App.css';
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home';
-import Navigation from './components/Navigation';
+import Navigation from './components/Navbar';
 import Login from './pages/Login';
 import Account from './pages/Account';
 import Authenticate from './pages/Authenticate';
@@ -12,8 +12,6 @@ import { useCallback } from 'react';
 function App() {
 
   const client = useStytch();
-
-  const navigate = useNavigate();
 
   const login = async (email: string) => {
     await client.magicLinks.email.loginOrCreate(email)

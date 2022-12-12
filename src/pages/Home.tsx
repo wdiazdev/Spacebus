@@ -21,6 +21,7 @@ export default function Home() {
                 <img src={astronaut} alt='astronaut' className='astronaut text-focus-in' />
 
             </div>
+
         </div>
     )
 }
