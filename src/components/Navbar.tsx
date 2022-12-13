@@ -1,14 +1,12 @@
 import '../styles/NavbarStyles.css';
 import Astronot from '../assets/astronot.gif';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useStytchSession } from '@stytch/stytch-react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 export default function Navigation({ logout }: any) {
 
@@ -78,7 +76,6 @@ export default function Navigation({ logout }: any) {
                                             border: 'none',
                                             background: '#000',
                                             transition: '0.5s ease-in',
-                                            border: '1px solid #00FFFF'
                                         }}
                                     >
                                         Logout
