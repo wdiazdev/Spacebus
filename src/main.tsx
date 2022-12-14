@@ -8,10 +8,10 @@ const stytch = initStytch("public-token-test-f5486417-a4f0-48f3-b369-3f8a3599591
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <StytchProvider stytch={stytch}>
-      <HashRouter>
+    <HashRouter>
+      <StytchProvider stytch={stytch}>
         <App />
-      </HashRouter>
-    </StytchProvider>
+      </StytchProvider>
+    </HashRouter>
   </React.StrictMode>
 )
